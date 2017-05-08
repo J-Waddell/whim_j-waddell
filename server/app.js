@@ -10,8 +10,8 @@ app.use(json())
 mongoose.Promise = Promise
 
 const userSchema = {
-    name: String
-    // likes: [String]
+    name: String,
+    likes: [String]
 }
 
 const User = mongoose.model('User', userSchema)
@@ -20,11 +20,20 @@ const PORT = process.env.PORT || 3000
 const MONGODB_URL = process.env.MONGODB_URL || `mongodb://localhost:27017/whim`
 
 app.get('/', (req, res, next) => {
-    console.log('anything')
     User
     .find()
     .then((users) => {
         res.json(users)
+    })
+})
+
+app.post('/addUser', (req, res, next) => {
+    let user = req.body
+    console.log(user)
+    User
+    .create(user)
+    .then((data) => {
+        res.json(data)
     })
 })
 
