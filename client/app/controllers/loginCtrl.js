@@ -1,3 +1,3 @@
-app.controller('LoginCtrl', function() {
-    console.log("LoginCtrl", LoginCtrl)
+app.controller('LoginCtrl', function($scope) {
+    $scope.thing
 })

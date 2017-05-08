@@ -1,3 +1,3 @@
-app.controller('HomeCtrl', function() {
-    console.log("HomeCtrl", HomeCtrl)
+app.controller('HomeCtrl', function($scope) {
+    $scope.thing
 })

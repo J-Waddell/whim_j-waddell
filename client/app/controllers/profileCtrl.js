@@ -1,3 +1,3 @@
-app.controller('ProfileCtrl', function() {
-    console.log("ProfileCtrl", ProfileCtrl)
+app.controller('ProfileCtrl', function($scope) {
+    $scope.thing
 })
