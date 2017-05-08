@@ -37,6 +37,15 @@ app.post('/addUser', (req, res, next) => {
     })
 })
 
+// deletes all users
+app.delete('/deleteUsers', (req, res, next) => {
+    User
+    .remove(User)
+    .then((data) => {
+        res.json(data)
+    })
+})
+
 mongoose.connect(MONGODB_URL)
   .then(() => {
     app.listen(PORT, () => {
