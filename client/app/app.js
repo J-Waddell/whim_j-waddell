@@ -1,3 +1,10 @@
+//api goodies
+// const config = {
+//     redditSecret: "nX2J1FlmKgm9EYAzcynEcdtw-yw",
+//     appKey: "qVnFYa3_YA0lDQ"
+// }
+
+//paths for partials
 const app = angular.module('whim', ['ngRoute'])
 
 app.config(($routeProvider, $locationProvider) => {
