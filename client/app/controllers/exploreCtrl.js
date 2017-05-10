@@ -1,4 +1,4 @@
-app.controller('ExploreCtrl', ['$scope', 'topFactory', function($scope, topFactory) {
-    $scope.posts = topFactory.get5P()
-        console.log("posts", $scope.posts)
-}]);
+app.controller('ExploreCtrl', function($scope, topFactory) {
+    topFactory.get6P().then(posts => $scope.posts = posts);
+        console.log("posts", topFactory.get6P())
+});

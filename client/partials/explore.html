@@ -32,4 +32,12 @@
 
         </div>
     </nav>
-</main>
+
+<div style="margin-top: 7em;">
+  <ul ng-repeat="post in posts">
+    <img src="{{post.data.url}}" class="postImg">
+    <li><a ng-href="{{post.data.url}}" class="postText"> {{ post.data.title }} <a/>
+    <button type="button" class="btn btn-info btn-block">Save</button>
+    </li>
+  </ul>
+</div>
