@@ -27,7 +27,7 @@ app.get('/', (req, res, next) => {
     })
 })
 
-app.post('/addUser', (req, res, next) => {
+app.post('/addUserPost', (req, res, next) => {
     let user = req.body
     console.log(user)
     User
@@ -38,7 +38,7 @@ app.post('/addUser', (req, res, next) => {
 })
 
 // deletes all users
-app.delete('/deleteUsers', (req, res, next) => {
+app.delete('/deleteUsersPost', (req, res, next) => {
     User
     .remove(User)
     .then((data) => {
