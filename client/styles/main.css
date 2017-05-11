@@ -1,14 +1,26 @@
 .postText {
-    font-size: 1.3em;
+    font-size: 1.7em;
 }
 
 .postImg {
     width: 30em;
     height: 20em;
+    border-radius: 1.2em;
 }
 
 button.btn.btn-info {
-    height: 2em;
-    width: 6em;
+    height: 2.5em;
+    width: 8em;
     text-align: center;
+    font-size: 1em;
 }
+
+.authorText {
+    text-align: right;
+    font-size: 3em;
+    color: black;
+}
+
+/*ul.pagination {
+    align-self: center;
+}*/
