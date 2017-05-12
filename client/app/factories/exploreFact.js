@@ -18,10 +18,21 @@ app.factory('exploreFactory', function ($http) {
             })
         }
 
+    // const userLike = function(likedPost) {
+    //     $http.post('./addUserPost',{likedPost}).then(function(data) {
+    //         console.log("data", data)
+    //         return data
+    //     })
+    // }
+
     const userLike = function(likedPost) {
-        $http.post('./addUserPost',likedPost).then(function(data) {
+        $http({
+            url: '/addUserPost',
+            method: 'POST',
+            data: {likedPost}
+        }).then(function(data) {
             console.log("data", data)
-            return data
+            // return data
         })
     }
 

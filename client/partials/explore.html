@@ -37,10 +37,8 @@
   <ul ng-repeat="post in posts">
     <img src="{{post.data.thumbnail}}" class="postImg" ng-if="post.data.thumbnail">
       <p>Likes {{ post.data.score }}</p>
-        <p><a ng-href="{{post.data.url}}" class="postText"> {{ post.data.title }} <a/>
-        <br>
-        <button type="button" class="btn btn-info btn-sm" ng-click="addPostToLikes(post.data.name)"><span class="glyphicon glyphicon-heart"></span> Save </button>
-        </p>
+        <p><a ng-href="{{post.data.url}}" class="postText"> {{ post.data.title }} <a/></p>
+        <button class="btn btn-info btn-sm" ng-click="addPostToLikes(post.data.name)"><span class="glyphicon glyphicon-heart"></span> Save </button>
       <p class="authorText">Author: {{ post.data.author }} </p>
   </ul>
 </div>
