@@ -1,4 +1,4 @@
-const password = "Wesse3122"
-const username = "Jesse Waddell"
+// const password = "userPW"
+// const username = "username"
 
-module.exports = {password, username}
+// module.exports = {password, username}
