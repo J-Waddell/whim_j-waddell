@@ -10,6 +10,7 @@ app.controller('ExploreCtrl', function($scope, $http, exploreFactory) {
     }
 
     $scope.addPostToLikes = function(post) {
+        console.log('post', post)
         exploreFactory.userLike(post);
     }
 });

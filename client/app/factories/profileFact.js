@@ -11,7 +11,7 @@ app.factory('profileFactory', function($http) {
     //     })
     // }
 
-    profileFactory.userLike = userLike;
+    // profileFactory.userLike = userLike;
     // profileFactory.getPost = getPost;
     return profileFactory;
 })

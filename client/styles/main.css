@@ -15,6 +15,10 @@ button.btn.btn-info {
     font-size: 1em;
 }
 
+button.btn.btn-primary.login {
+    color: : white;
+}
+
 .authorText {
     text-align: right;
     font-size: 3em;
