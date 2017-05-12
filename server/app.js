@@ -33,6 +33,7 @@ app.post('/addUserPost', (req, res, next) => {
     User
     .create(user)
     .then((data) => {
+        console.log("data", data)
         res.json(data)
     })
 })

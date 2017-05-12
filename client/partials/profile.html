@@ -1,21 +1,50 @@
-<main style="height:2000px;">
+<main>
     <nav class="navbar navbar-default navbar-fixed-top">
+            <a class="navbar-brand" href="">Whim</a>
         <ul class="nav nav-tabs">
             <li class="active"><a href="/#/explore">Explore</a></li>
             <li><a href="/#/profile">Profile</a></li>
             <li class="dropdown">
                 <a href="/#/profile" data-toggle="dropdown" class="dropdown-toggle">Media <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="https://www.instagram.com/">Instagram</a></li>
-                    <li><a href="https://twitter.com/">Twitter</a></li>
-                    <li><a href="https://www.snapchat.com/">Snapchat</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram <img class="SMLogo" src="https://cdn.worldvectorlogo.com/logos/instagram-2016.svg"></a></li>
+                    <li><a href="https://twitter.com/">Twitter <img class="SMLogo" src="https://img.clipartfest.com/2b9fedf2f254517fa6edaf34394b1f5b_new-twitter-logo-vector-eps-twitter-clipart-logo_518-518.png"></a></li>
+                    <li><a href="https://www.snapchat.com/">Snapchat <img class="SMLogo" src="https://cdn.worldvectorlogo.com/logos/snapchat.svg"></a></li>
                     <li class="divider"></li>
                     <li><a href="">Sign out</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
+<div class="container" style="margin-top: 7em;">
+    <div class="row">
+        <div class="col-lg-3 col-sm-6">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAA0oAAAAJDgwZDZhOTViLTEyM2MtNGMyYy1iZmZhLWEwZWI5NzQyNTgyYw.jpg">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="https://www.linkedin.com/in/jesse-waddell-64059b141/">Jesse Waddell</a>
+                    </div>
+                    <div class="desc">Passionate designer</div>
+                    <div class="desc">Curious developer</div>
+                    <div class="desc">Skater boy</div>
+                </div>
+                <div class="bottom">
+                    <i class="fa fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </main>
+
 
 <div>
     <ul ng-repeat="like in likes">

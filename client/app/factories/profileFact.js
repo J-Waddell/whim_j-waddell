@@ -1,10 +1,17 @@
 'use strict'
 
-app.factory('userProfile', ['$http', function($http) {
+app.factory('profileFactory', function($http) {
 
-    const userLike = function() {
-        return $http.post(`/addUserPost`).then(function(data) {
-            return data
-        })
-    }
-}])
+    const profileFactory = {}
+    const postedURL = './addUserPost'
+
+    // const getPost = function() {
+    //     return $http.get(``).then(function(favorited) {
+    //         return favorited.data.data.children
+    //     })
+    // }
+
+    profileFactory.userLike = userLike;
+    // profileFactory.getPost = getPost;
+    return profileFactory;
+})

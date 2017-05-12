@@ -1,12 +1,15 @@
-app.controller('ExploreCtrl', function($scope, $http, topFactory) {
-    topFactory.get6P().then(posts => $scope.posts = posts);
-        console.log("posts", topFactory.get6P());
+app.controller('ExploreCtrl', function($scope, $http, exploreFactory) {
+    exploreFactory.get6P().then(posts => $scope.posts = posts);
+        console.log("posts", exploreFactory.get6P());
 
     $scope.ShowSrch= function(result) {
-        console.log("result", result)
-        $http.get(`https://www.reddit.com/search?q=${result}&restrict_sr=&sort=relevance&t=all/`)
+        $http.get(`https://www.reddit.com/search.json?q=${result}`)
         .then(function(search) {
-            // console.log("search", search)
+            console.log("search", search)
         })
+    }
+
+    $scope.addPostToLikes = function(post) {
+        exploreFactory.userLike(post);
     }
 });
