@@ -1,3 +1,22 @@
+/*ul.panel.panel-default {
+    background-color: #0074D9;
+    box-shadow: 30px;
+}*/
+body {
+    /*background-color: darkgrey;*/
+}
+
+ul.panel.panel-default div.panel-footer.clearfix {
+    border-radius: 1em;
+    padding-top: 1em;
+    margin-top: 2em;
+}
+
+ul.panel.panel-default {
+    box-shadow: 3px 3px 5px 3px grey;
+    margin-top: 5em;
+}
+
 .postText {
     font-size: 1.7em;
 }
@@ -5,7 +24,8 @@
 .postImg {
     width: 30em;
     height: 20em;
-    border-radius: 1.2em;
+    border-radius: .5em;
+    box-shadow: 3px 2px 3px lightgrey;
 }
 
 button.btn.btn-info {
@@ -21,7 +41,7 @@ button.btn.btn-primary.login {
 
 .authorText {
     text-align: right;
-    font-size: 3em;
+    font-size: 2em;
     color: black;
 }
 

@@ -1,11 +1,16 @@
 app.controller('ProfileCtrl', function($scope, $http, profileFactory) {
-    // profileFactory.getLike().then(likes => $scope.likes = likes);
-    // console.log('likes', profileFactory.getLike());
+    profileFactory.getPost().then(likes => $scope.likes = likes);
+    console.log('likes', profileFactory.getPost());
 
     $scope.ShowLikes = function(like) {
-        $http.get(`./addUserPost`)
+        $http.get(`./getUserLikes`)
         .then(function(saved) {
             console.log('saved', saved)
         })
     }
+
+    // $scope.addPostToLikes = function(like) {
+    //     console.log('like', like)
+    //     exploreFactory.userLike(like);
+    // }
 })

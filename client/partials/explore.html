@@ -34,12 +34,16 @@
 </main>
 
 <div style="margin-top: 7em;">
-  <ul ng-repeat="post in posts">
+  <ul ng-repeat="post in posts" class="panel panel-default">
+    <div class="panel-body">
     <img src="{{post.data.thumbnail}}" class="postImg" ng-if="post.data.thumbnail">
-      <p>Likes {{ post.data.score }}</p>
+      <p>Likes: {{ post.data.score }}  <a>#{{ post.data.subreddit }}<a/></p>
         <p><a ng-href="{{post.data.url}}" class="postText"> {{ post.data.title }} <a/></p>
-        <button class="btn btn-info btn-sm" ng-click="addPostToLikes(post.data.name)"><span class="glyphicon glyphicon-heart"></span> Save </button>
+        <button class="btn btn-info btn-sm" ng-click="addPostToLikes(post.data)"><span class="glyphicon glyphicon-heart"></span> Save </button>
+        <div class="panel-footer clearfix">
       <p class="authorText">Author: {{ post.data.author }} </p>
+      </div>
+      </div>
   </ul>
 </div>
 

@@ -6,12 +6,22 @@ app.factory('profileFactory', function($http) {
     const postedURL = './addUserPost'
 
     const getPost = function() {
-        return $http.get(`./addUserPost`).then(function(favorited) {
-            return favorited.data.data.children
+        return $http.get(`./getUserLikes`).then(function(favorited) {
+            console.log("help", favorited)
+            return favorited.data
         })
     }
 
+    const deletePost = function() {
+        return $http.delete('./deleteUsersPost').then(function(remove) {
+            console.log("removed", remove)
+            return remove.data
+        })
+    }
+
+
     // profileFactory.userLike = userLike;
-    // profileFactory.getPost = getPost;
+    profileFactory.getPost = getPost;
+    profileFactory.deletePost = deletePost
     return profileFactory;
 })
