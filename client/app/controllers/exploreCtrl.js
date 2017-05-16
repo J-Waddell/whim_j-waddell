@@ -10,7 +10,12 @@ app.controller('ExploreCtrl', function($scope, $http, exploreFactory) {
     }
 
     $scope.addPostToLikes = function(post) {
-        console.log('post', post)
-        exploreFactory.userLike(post);
+        return new Promise((resolve, reject) => {
+            $http.post(`http://localhost:3000/addPost`, post)
+            .then((data) => {
+                console.log(data)
+                resolve(data.data.children)
+            })
+        })
     }
 });
