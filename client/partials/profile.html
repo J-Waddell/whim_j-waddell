@@ -46,11 +46,28 @@
 </main>
 
 
-<div>
+<!-- <div>
     <ul ng-repeat="like in likes">
         <li>
-        <img src="{{like.thumbnail}}">{{ like.author }} / {{ like.permalink }} / {{ like.title }} / {{ like.url }} {{ like._id }} <button class="btn btn-primary"
-        type="button" ng-click="">DELETE</button>
+        {{ like.title }} 
+        <img src="{{like.thumbnail}}"><a href="like.permalink"></a>
+        {{ like.author }} 
+        <a href="{{like.permalink}}"> {{ like.permalink }} </a>
+        <a href="{{like.url}}"> {{ like.url }} </a>
         </li>
     </ul>
+</div> -->
+
+<div style="margin-top: 7em;">
+  <ul ng-repeat="like in likes" class="">
+    <div class="panel-body">
+    <img src="{{like.thumbnail}}" class="postImg">
+        <p><a ng-href="{{like.url}}" class="postText"> {{ like.title }} <a/></p>
+        <button class="btn btn-primary"
+        type="button" ng-click="">DELETE</button>
+        <div class="panel-footer clearfix" style="margin-top: 2em;">
+      <p class="authorText">Author: {{ like.author }} </p>
+      </div>
+      </div>
+  </ul>
 </div>
