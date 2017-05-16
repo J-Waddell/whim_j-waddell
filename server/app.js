@@ -54,11 +54,11 @@ app.post('/addPost', (req, res, next) => {
 //finding posts
 app.get('/getUserLikes', (req, res, next) => {
     let posts = req.body
-    console.log(req.body)
+    // console.log(""req.body)
     Post
     .find()
     .then((info) => {
-        console.log("info", info)
+        // console.log("info", info)
         res.json(info)
     })
 })
@@ -66,7 +66,7 @@ app.get('/getUserLikes', (req, res, next) => {
 // deletes all users
 app.delete('/deleteUsersPost', (req, res, next) => {
     let remove = req.body
-    console.log("deleted", req.body)
+    // console.log("deleted", req.body)
     Delete
     .remove(remove)
     .then((data) => {

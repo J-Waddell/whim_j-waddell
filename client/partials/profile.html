@@ -49,7 +49,8 @@
 <div>
     <ul ng-repeat="like in likes">
         <li>
-        <img src="">{{ like.author }} / {{ like.permalink }} / {{ like.title }} / {{ like.tumbnail }} / {{ like.url }} {{ like._id }}
+        <img src="{{like.thumbnail}}">{{ like.author }} / {{ like.permalink }} / {{ like.title }} / {{ like.url }} {{ like._id }} <button class="btn btn-primary"
+        type="button" ng-click="">DELETE</button>
         </li>
     </ul>
 </div>
