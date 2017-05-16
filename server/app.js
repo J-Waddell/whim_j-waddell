@@ -2,7 +2,7 @@ const express = require('express')
 const { json } = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path')
-// const auth = require('./auth.js')
+const auth = require('./auth.js')
 
 const app = express()
 
@@ -12,29 +12,63 @@ mongoose.Promise = Promise
 
 const userSchema = {
     name: String,
-    likes: [String]
+    password: String,
+    likes: [mongoose.Schema.Types.ObjectId]
+}
+
+const postSchema = {
+    author: String,
+    permalink: String,
+    title: String,
+    thumbnail: String,
+    url: String
+}
+
+const deleteSchema = {
+    author: String,
+    permalink: String,
+    title: String,
+    thumbnail: String,
+    url: String
 }
 
 const User = mongoose.model('User', userSchema)
+const Post = mongoose.model('Post', postSchema)
+const Delete = mongoose.model('Delete', deleteSchema)
 
 const PORT = process.env.PORT || 3000
-const MONGODB_URL = process.env.MONGODB_URL || `mongodb://localhost:27017/whim`
+const MONGODB_URL = process.env.MONGODB_URL || `mongodb://${auth.username}:${auth.password}@ds137291.mlab.com:37291/whim`
 
-app.post('/addUserPost', (req, res, next) => {
-    // let user = req.body
+//adding posts
+app.post('/addPost', (req, res, next) => {
+    let posts = req.body
     console.log(req.body)
-    // User
-    // .create(user)
-    // .then((data) => {
-    //     console.log("data", data)
-    //     res.json(data)
-    // })
+    Post
+    .create(posts)
+    .then((data) => {
+        console.log("data", data)
+        res.json(data)
+    })
+})
+
+//finding posts
+app.get('/getUserLikes', (req, res, next) => {
+    let posts = req.body
+    console.log(req.body)
+    Post
+    .find()
+    .then((info) => {
+        console.log("info", info)
+        res.json(info)
+    })
 })
 
 // deletes all users
 app.delete('/deleteUsersPost', (req, res, next) => {
-    User
-    .remove(User)
+    let remove = req.body
+    console.log("deleted", req.body)
+    Delete
+    .remove(remove)
     .then((data) => {
         res.json(data)
     })

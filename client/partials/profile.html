@@ -11,7 +11,7 @@
                     <li><a href="https://twitter.com/">Twitter <img class="SMLogo" src="https://img.clipartfest.com/2b9fedf2f254517fa6edaf34394b1f5b_new-twitter-logo-vector-eps-twitter-clipart-logo_518-518.png"></a></li>
                     <li><a href="https://www.snapchat.com/">Snapchat <img class="SMLogo" src="https://cdn.worldvectorlogo.com/logos/snapchat.svg"></a></li>
                     <li class="divider"></li>
-                    <li><a href="">Sign out</a></li>
+                    <li><a href="/#/">Sign out</a></li>
                 </ul>
             </li>
         </ul>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="desc">Passionate designer</div>
                     <div class="desc">Curious developer</div>
-                    <div class="desc">Skater boy</div>
+                    <div class="desc">Eager learner</div>
                 </div>
                 <div class="bottom">
                     <i class="fa fa-behance"></i>
@@ -48,6 +48,8 @@
 
 <div>
     <ul ng-repeat="like in likes">
-        <li></li>
+        <li>
+        <img src="">{{ like.author }} / {{ like.permalink }} / {{ like.title }} / {{ like.tumbnail }} / {{ like.url }}
+        </li>
     </ul>
 </div>

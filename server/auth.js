@@ -1,4 +1,4 @@
-// const password = "userPW"
-// const username = "username"
+const password = "password"
+const username = "Jessfce"
 
-// module.exports = {password, username}
+module.exports = {password, username}

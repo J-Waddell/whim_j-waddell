@@ -7,6 +7,7 @@ app.factory('exploreFactory', function ($http) {
     const redditAPI = 'http://reddit.com/r/popular/.json?'
     const get6P = function() {
         return $http.get(`${redditAPI}limit=6`).then(function(top6results) {
+            console.log("results breh", top6results)
             return top6results.data.data.children;
         })
     }
@@ -18,13 +19,6 @@ app.factory('exploreFactory', function ($http) {
             })
         }
 
-    // const userLike = function(likedPost) {
-    //     $http.post('./addUserPost',{likedPost}).then(function(data) {
-    //         console.log("data", data)
-    //         return data
-    //     })
-    // }
-
     const userLike = function(likedPost) {
         $http({
             url: '/addUserPost',
@@ -32,8 +26,7 @@ app.factory('exploreFactory', function ($http) {
             data: {likedPost}
         }).then(function(data) {
             console.log("data", data)
-            // return data
-        })
+            })
     }
 
     exploreFactory.getList = getList;
