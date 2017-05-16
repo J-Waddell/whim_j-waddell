@@ -19,19 +19,19 @@ app.factory('exploreFactory', function ($http) {
             })
         }
 
-    const userLike = function(likedPost) {
-        $http({
-            url: '/addUserPost',
-            method: 'POST',
-            data: {likedPost}
-        }).then(function(data) {
-            console.log("data", data)
-            })
-    }
+    // const userLike = function(likedPost) {
+    //     $http({
+    //         url: '/addUserPost',
+    //         method: 'POST',
+    //         data: {likedPost}
+    //     }).then(function(data) {
+    //         console.log("data", data)
+    //         })
+    // }
 
     exploreFactory.getList = getList;
     exploreFactory.get6P = get6P;
-    exploreFactory.userLike = userLike;
+    // exploreFactory.userLike = userLike;
     return exploreFactory;
 
 });

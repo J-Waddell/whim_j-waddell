@@ -3,7 +3,7 @@ app.controller('ProfileCtrl', function($scope, $http, profileFactory) {
     console.log('likes', profileFactory.getPost());
 
     $scope.ShowLikes = function(like) {
-        $http.get(`./getUserLikes`)
+        $http.get(`http://localhost:3000/getUserLikes`)
         .then(function(saved) {
             console.log('saved', saved)
         })
