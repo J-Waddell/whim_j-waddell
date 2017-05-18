@@ -7,7 +7,6 @@ app.factory('profileFactory', function($http) {
 
     const getPost = function() {
         return $http.get(`http://localhost:3000/getUserLikes`).then(function(favorited) {
-            console.log("help", favorited)
             return favorited.data
         })
     }
