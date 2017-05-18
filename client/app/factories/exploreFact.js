@@ -4,11 +4,19 @@ app.factory('exploreFactory', function ($http) {
 
     const exploreFactory = {}
 
+    const redditSearch = 'https://www.reddit.com/search.json?q='
     const redditAPI = 'http://reddit.com/r/popular/.json?'
     const get6P = function() {
-        return $http.get(`${redditAPI}limit=6`).then(function(top6results) {
+        return $http.get(`${redditAPI}limit=10`).then(function(top6results) {
             console.log("results breh", top6results)
             return top6results.data.data.children;
+        })
+    }
+
+    const getSearch = function(query) {
+        return $http.get(`${redditSearch}${query}`).then(function(queries) {
+            console.log("more goodies", queries)
+            return queries.data.data.children
         })
     }
 
@@ -29,9 +37,15 @@ app.factory('exploreFactory', function ($http) {
             })
     }
 
+    exploreFactory.getSearch = getSearch;
     exploreFactory.getList = getList;
     exploreFactory.get6P = get6P;
     exploreFactory.userLike = userLike;
     return exploreFactory;
 
 });
+
+// app.factory('searchFactory', function ($http) {
+//     const searchFactory = {}
+    
+// })

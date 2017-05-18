@@ -42,11 +42,9 @@ const MONGODB_URL = process.env.MONGODB_URL || `mongodb://${auth.username}:${aut
 //adding posts
 app.post('/addPost', (req, res, next) => {
     let posts = req.body
-    console.log(req.body)
     Post
     .create(posts)
     .then((data) => {
-        console.log("data", data)
         res.json(data)
     })
 })
@@ -54,11 +52,9 @@ app.post('/addPost', (req, res, next) => {
 //finding posts
 app.get('/getUserLikes', (req, res, next) => {
     let posts = req.body
-    // console.log(""req.body)
     Post
     .find()
     .then((info) => {
-        // console.log("info", info)
         res.json(info)
     })
 })
@@ -66,7 +62,6 @@ app.get('/getUserLikes', (req, res, next) => {
 // deletes all users
 app.delete('/deleteUsersPost', (req, res, next) => {
     let remove = req.body
-    // console.log("deleted", req.body)
     Delete
     .remove(remove)
     .then((data) => {

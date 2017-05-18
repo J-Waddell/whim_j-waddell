@@ -5,7 +5,6 @@ app.controller('ProfileCtrl', function($scope, $http, profileFactory) {
     $scope.ShowLikes = function(like) {
         $http.get(`http://localhost:3000/getUserLikes`)
         .then(function(saved) {
-            console.log('saved', saved)
         })
     }
 

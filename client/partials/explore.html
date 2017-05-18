@@ -22,16 +22,24 @@
                     <li><a href="/#/profile">Profile</a></li>
                 </ul>
             </div>
+            <form name="form">
             <div class="input-group">
-              <input type="text" ng-model="search" class="form-control">
+              <input type="text" ng-model="search" class="form-control" required="">
                 <span class="input-group-btn">
-                  <button class="btn btn-primary" type="button" ng-click="ShowSrch(result)"><span class="glyphicon glyphicon-search" aria-hidden="true">
+                  <button class="btn btn-primary" type="button" ng-click="ShowSrch(search)" ng-disabled="form.$invalid"><span class="glyphicon glyphicon-search" aria-hidden="true">
                   </span> Search!</button>
                 </span>
             </div>
+            </form>
         </div>
     </nav>
 </main>
+
+<div>
+    <ul ng-repeat="query in info">
+        <li>{{query.data.author}}</li>
+    </ul>
+</div>
 
 <div style="margin-top: 7em;">
   <ul ng-repeat="post in posts" class="panel panel-default">
