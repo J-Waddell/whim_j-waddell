@@ -2,8 +2,8 @@
     <nav class="navbar navbar-default navbar-fixed-top">
             <a class="navbar-brand" href="">Whim</a>
         <ul class="nav nav-tabs">
-            <li class="active"><a href="/#/explore">Explore</a></li>
-            <li><a href="/#/profile">Profile</a></li>
+            <li><a href="/#/explore" class="nav-tab text">Explore</a></li>
+            <li><a href="/#/profile" class="nav-tab text">Profile</a></li>
             <li class="dropdown">
                 <a href="/#/profile" data-toggle="dropdown" class="dropdown-toggle">Media <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -49,8 +49,8 @@
     <div class="panel-body">
     <img src="{{like.thumbnail}}" class="postImg">
         <p><a ng-href="{{like.url}}" class="postText"> {{ like.title }} <a/></p>
-        <button class="btn btn-primary"
-        type="button" ng-click="">DELETE</button>
+        <button class="btn delete"
+        type="button" ng-click="DeleteLike(like._id)">DELETE</button>
         <div class="panel-footer clearfix" style="margin-top: 2em;">
       <p class="authorText">Author: {{ like.author }} </p>
       </div>

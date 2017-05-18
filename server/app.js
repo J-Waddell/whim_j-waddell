@@ -34,7 +34,7 @@ const deleteSchema = {
 
 const User = mongoose.model('User', userSchema)
 const Post = mongoose.model('Post', postSchema)
-const Delete = mongoose.model('Delete', deleteSchema)
+// const Delete = mongoose.model('Delete', deleteSchema)
 
 const PORT = process.env.PORT || 3000
 const MONGODB_URL = process.env.MONGODB_URL || `mongodb://${auth.username}:${auth.password}@ds137291.mlab.com:37291/whim`
@@ -60,12 +60,12 @@ app.get('/getUserLikes', (req, res, next) => {
 })
 
 // deletes all users
-app.delete('/deleteUsersPost', (req, res, next) => {
-    let remove = req.body
-    Delete
-    .remove(remove)
+app.post(`/deleteUsersPost/:id`, (req, res, next) => {
+    Post
+    .remove({_id: req.params.id})
     .then((data) => {
         res.json(data)
+        console.log(data)
     })
 })
 
