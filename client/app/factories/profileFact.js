@@ -11,16 +11,17 @@ app.factory('profileFactory', function($http) {
         })
     }
 
-    const deletePost = function() {
-        return $http.delete('http://localhost:3000/deleteUsersPost').then(function(remove) {
-            console.log("removed", remove)
-            return remove.data
-        })
-    }
+    // const deletePost = function(data) {
+    //     console.log("data", data)
+    //     return $http.delete('http://localhost:3000/deleteUsersPost').then(function(remove) {
+    //         console.log("removed", remove)
+    //         return remove
+    //     })
+    // }
 
 
     // profileFactory.userLike = userLike;
     profileFactory.getPost = getPost;
-    profileFactory.deletePost = deletePost
+    // profileFactory.deletePost = deletePost
     return profileFactory;
 })

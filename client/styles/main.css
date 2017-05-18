@@ -6,9 +6,32 @@ body {
     /*background-color: darkgrey;*/
 }
 
-div.container {
-   
+div.container-fluid {
+    background-color: #5C6BC0;
 }
+
+ul.nav.nav-tabs {
+    background-color: #5C6BC0
+}
+
+a.navbar-brand.text {
+    color: #C5CAE9;
+}
+li a.navbar-brand.text {
+    color: #F5F5F5
+}
+
+a.navbar-brand {
+    color: #C5CAE9 !important;
+}
+
+a.nav-tab.text {
+    color: #BDBDBD !important;
+}
+a.dropdown-toggle {
+    color: #BDBDBD !important;
+}
+
 
 ul.panel.panel-default div.panel-footer.clearfix {
     border-radius: 1em;
@@ -28,15 +51,23 @@ ul.panel.panel-default {
 .postImg {
     width: 30em;
     height: 20em;
-    border-radius: .5em;
+    border-radius: .2em;
     box-shadow: 3px 2px 3px lightgrey;
 }
 
-button.btn.btn-info {
-    height: 2.5em;
-    width: 8em;
-    text-align: center;
-    font-size: 1em;
+button.btn.delete {
+    background-color: #EF6C00;
+    color: #F5F5F5;
+}
+
+button.btn.search {
+    background-color: #039BE5;
+    color: #F5F5F5;
+}
+
+button.btn {
+    background-color: #f44336;
+    color: #F5F5F5;
 }
 
 button.btn.btn-primary.login {
