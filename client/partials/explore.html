@@ -1,0 +1,64 @@
+<main>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <!-- Brand/logo -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-brand text" href="">Whim</a>
+            </div>
+
+
+            <!-- Collapsible Navbar -->
+            <div class="collapse navbar-collapse" id="example-1">
+                <ul class="nav navbar-nav">
+                   <!--  <li class="active"><a href="/#/">Login<span class="sr-only">(current)</span></a></li> -->
+                    <li><a href="/#/explore" class="navbar-brand text">Explore</a></li>
+                    <li><a href="/#/profile" class="navbar-brand text">Profile</a></li>
+                </ul>
+            </div>
+            <form name="form">
+                <div class="input-group" style="margin-bottom: 2em;">
+                  <input type="text" ng-model="search" class="form-control" required="">
+                    <span class="input-group-btn">
+                      <button class="btn search" type="button" ng-click="ShowSrch(search)" ng-disabled="form.$invalid"><span class="glyphicon glyphicon-search" aria-hidden="true">
+                      </span> Search!</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </nav>
+</main>
+
+<div>
+    <ul ng-repeat="query in info">
+        <li>{{query.data.author}}</li>
+    </ul>
+</div>
+
+<div style="margin-top: 9em;">
+  <ul ng-repeat="post in posts" class="panel panel-default">
+    <div class="panel-body">
+    <img src="{{post.data.thumbnail}}" class="postImg" ng-if="post.data.thumbnail">
+      <p>Likes: {{ post.data.score }}  <a>#{{ post.data.subreddit }}<a/></p>
+        <p><a ng-href="{{post.data.url}}" class="postText"> {{ post.data.title }} <a/></p>
+        <button class="btn" type="button" ng-click="addPostToLikes(post.data)"><span class="glyphicon glyphicon-heart"></span> Save </button>
+        <div class="panel-footer clearfix">
+      <p class="authorText">Author: {{ post.data.author }} </p>
+      </div>
+      </div>
+  </ul>
+</div>
+
+   <nav aria-label="...">
+  <ul class="pager">
+    <li><a href="/#/explore">Previous</a></li>
+    <li><a href="/#/explore">Next</a></li>
+  </ul>
+</nav>
+
