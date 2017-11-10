@@ -1,5 +1,6 @@
+console.log('Hello');
 //paths for partials
-const app = angular.module('whim', ['ngRoute'])
+var app = angular.module('whim', ['ngRoute'])
 
 app.config(($routeProvider, $locationProvider) => {
     $locationProvider.hashPrefix('')
